@@ -1,0 +1,41 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\sortlist[entry]{nty/global/}
+  \entry{abstracttitle}{online}{}
+    \verb{url}
+    \verb https://tex.stackexchange.com/questions/69551/abstract-and-title-toge
+    \verb ther-on-one-page
+    \endverb
+  \endentry
+
+  \entry{blindtext1}{online}{}
+    \verb{url}
+    \verb https://texblog.org/2011/02/26/generating-dummy-textblindtext-with-la
+    \verb tex-for-testing/
+    \endverb
+  \endentry
+
+  \entry{blindtext2}{online}{}
+    \verb{url}
+    \verb https://texblog.org/2011/02/26/generating-dummy-textblindtext-with-la
+    \verb tex-for-testing/
+    \endverb
+  \endentry
+\endsortlist
+\endinput
