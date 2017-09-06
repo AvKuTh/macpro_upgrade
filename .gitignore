@@ -1,5 +1,6 @@
 
 *.gz
+<<<<<<< Updated upstream
 
 *.out
 
@@ -14,3 +15,5 @@
 *.aux
 
 upgradeReport-blx\.bib
+=======
+>>>>>>> Stashed changes
