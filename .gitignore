@@ -1,4 +1,3 @@
-
 *.gz
 
 *.out
@@ -13,6 +12,6 @@
 
 *.aux
 
-upgradeReport-blx\.bib
+upgradeReport-blx.bib
 
 *xml
