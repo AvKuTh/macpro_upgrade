@@ -1,9 +1,11 @@
 \documentclass[]{article}
 
+\usepackage{titling}
 \usepackage[english]{babel}
 \usepackage[backend=bibtex,style=numeric,citestyle=numeric-comp,url=true]{biblatex}
 \usepackage{csquotes}
 \usepackage[]{hyperref}
+
 
 
 
@@ -12,6 +14,7 @@
 \addbibresource{ref.bib}
 
 \begin{document}
+%\begin{titlingpage}
 
 \title{Upgrading Mac-Pro 15 inch late 2011 model}
 
@@ -20,12 +23,23 @@
 
 \maketitle
 
-\section{abstract}
+\begin{abstract}
 \label{abstract}
-\include{files/abstract}
+\textbf{
+\input{files/abstract}
+}
+\end{abstract}
 
-Hi!
-Remaining to do : ~\cite{abstracttitle,blindtext1,blindtext2}
+%\end{titlingpage}
+\newpage
+
+\section{Introduction}
+\label{intro}
+\input{files/intro}
+
+\section{Survey}
+\label{survey}
+\input{files/survey}
 
 
 \printbibliography
