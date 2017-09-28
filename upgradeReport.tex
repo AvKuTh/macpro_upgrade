@@ -1,37 +1,48 @@
-\documentclass[]{article}
+\documentclass[12pt, journal, a4paper]{IEEEtran}
+%\documentclass[final]{article}
 
-\usepackage{titling}
+
 \usepackage[english]{babel}
 \usepackage[backend=bibtex,style=numeric,citestyle=numeric-comp,url=true]{biblatex}
 \usepackage{csquotes}
-\usepackage[]{hyperref}
+\usepackage{hyperref}
+\usepackage{abstract}
+%\usepackage[utopia]{mathdesign}
 
-
-
+\renewcommand{\abstracttextfont}{\normalfont\normalsize\bfseries}
+\renewcommand{\abstractnamefont}{\normalfont\normalsize\itshape}
+\newcommand{\intel}{Intel\textsuperscript{\tiny\textregistered} }
+\newcommand{\core}{Core\textsuperscript{\tiny\texttrademark}  }
+\newcommand{\macsales}{OWC~\cite{owc}}
+\newcommand{\crucial}{Crucial~\cite{crucial}}
+\newcommand{\model}{MacBook Pro (15-inch, late 2011)}
+\newcommand{\upgradeprice}{2000}
+\newcommand{\market}{Sham Sui Po}
 
 \hypersetup{colorlinks=true}
 
 \addbibresource{ref.bib}
 
 \begin{document}
-%\begin{titlingpage}
 
 \title{Upgrading Mac-Pro 15 inch late 2011 model}
-
-\author{Avishek~Thakur
-\thanks{e-mail: avikumarthakur@gmail.com}}
-
-\maketitle
-
-\begin{abstract}
-\label{abstract}
-\textbf{
-\input{files/abstract}
+\author{Avishek~Thakur\\%
+Email: avikumarthakur@gmail.com
+%\thanks{e-mail: avikumarthakur@gmail.com}
 }
-\end{abstract}
 
-%\end{titlingpage}
-\newpage
+\twocolumn[
+  \begin{@twocolumnfalse}
+	\maketitle
+	\begin{abstract}
+	  \label{abstract}
+	  \input{files/abstract}
+    \end{abstract}
+    \tableofcontents
+  \end{@twocolumnfalse}
+  ]
+%\saythanks
+\clearpage
 
 \section{Introduction}
 \label{intro}
@@ -42,6 +53,16 @@
 \input{files/survey}
 
 
-\printbibliography
+\section{Methodology, Maintenance and Future Considerations}
+\label{mmf}
+\input{files/mmf}
 
+\section{Conclusion}
+\label{conclusion}
+\input{files/conclusion}
+
+
+
+\printbibliography
+	
 \end{document}

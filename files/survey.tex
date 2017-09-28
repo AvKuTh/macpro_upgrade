@@ -1,5 +1,281 @@
-RAM
+We will survey the existing hardware and their features below. We will also discuss technical recommendations for up-gradation. We discuss the memory, storage and external peripherals below.
 
-Hard Disk 
+We will consider the advice from \crucial and \macsales seriously as they offer memory and storage options often with lifetime warranty for our specific Mac model.
 
-keyboard & Mouse
+\subsection{Basic Survey of  Memory}
+
+Opening many tabs in Google Chrome leads to computer hang or slowdown due to RAM limitations~\cite{suchromeram}. Even in 16GB RAM computers, many tabs of chrome alone may consume 48\% memory.
+
+The model of the computer is \model also known as MacBook Pro 8.2.
+We refer to the official site for details~\cite{modelupgradeapple}. The existing memory is 4GB (two 2GB SO-DIMMs) of 1333MHz DDR3 SDRAM. It is of Double Data Rate Small Outline Dual Inline Memory Module (DDR3) format and is a 204-pin model. The dimensions are 30mm(1.18 inch). The type of RAM is PC3-10600 DDR3 1333 MHz. The format PC\textbf{X}-\textbf{Y} implies RAM of DDR \textbf{X} and maximum data transfer rate of \textbf{Y} (MB/s). The processor type is \intel \core   i7-2675QM Processor as returned by terminal command ``sysctl -n machdep.cpu.brand\_string'' and detailed in `everymac' website~\cite{everymacdet}.
+
+DDR is not backward compatible so we cannot substitute DDR with DDR2/3~\cite{macrumorbuyram}. 
+DIMM are desktop full sized modules and SO-DIMM are `notebook' size modules. The number of pins of RAM must match.
+For best performance, it is recommended that  we fill both memory slots, installing an equal memory module in each slot.
+Although the official Apple website~\cite{modelupgradeapple} seems to recommend 8GB as maximum memory upgrade, it could be because 8GB was maximum available memory at that time. According to the processor details in the official \intel website~\cite{intelprodet}, memory can be upgraded to a maximum of 16GB with 1333 MHz. There are several online websites recommending compatible upgrade of 16GB~\cite{cnet16gb,everymacramupgrade,macsalesramlist,applestackexramup}. Upgrade for RAM beyond 16GB in the current model is rare to find online, probably much more expensive and outright denied by \intel, \macsales, etc. Therefore, \emph{we will not consider a memory upgrade beyond 16GB}.
+
+The current model is 1333 MHz. This speed is safe in terms of compatibility. Online, there are some recommendations for upgrade to higher memory at same speed of 1333 MHz for our model~\cite{everymacramupgrade}. There are some forums where the speed choice of 1600 MHz is mentioned (not with high clarity)~\cite{applestackexramup,macsalesramlist,applestackexramsp,macrumourspforum}. It must be noted that online~\cite{macrumourspforum} it may be recommended to get a RAM for a similar MacBook Pro model that has \intel \core i7-2760QM processor which allows 1600 MHz RAM~\cite{intelprodet2760} unlike our model. The official \intel specs about the processor states that it does not support speed higher that 1333 MHz. There are warnings that even  \intel \core i7-2760QM processor may not support 1600 MHz~\cite{applestackexramsp2}. Some claim that if a newly installed RAM with higher speed is not supported, the `about this mac' pane will show the effective speed at which the RAM is running~\cite{macrumourspforum}. Others claim that even though `about this mac' pane shows some speed, a newly installed RAM may not even work or pass tests~\cite{applestackexramsp2}. The many screenshot proof online may not mean the 1600 MHz RAM actually runs at 1600MHz -- the processor may still communicate with a 1600MHz RAM at 1333 MHz speed or less depending on capability in the best case. In the worst, the RAM may not work. There are strong reservation against 1600 MHz RAM for our model in some places~\cite{applestackexramsp,macrumorbuyram}. Therefore, \emph{we will not consider a RAM beyond 1333 MHz speed}.
+
+Comparison between RAMs should take into account speed and CAS latency -- CL which is the time between accessing the memory and reading the output. Lower the CL and higher the frequency, better the RAM. It has been mentioned~\cite{macrumorbuyram} that a wrong CL RAM can cause fatal problems like not being able to boot or being frequently unstable. The only suggested way to reliably check the current CL of RAM in MacBook Pro is to open the case and check the label of the RAM hardware~\cite{macrumorbuyram}. Some claim that early 2011 models use 9-9-9-24 RAM timing; CL 9 seems to be mostly in use for models released around 2011~\cite{applediss}. It is further mentioned that for MacBook Pro 2011 model, RAM with CL greater than 10 or less than 8 will cause incompatibility~\cite{macrumorbuyram}. RAM with CL 8 is rare and therefore RAM with CL 9 is ideal. 
+Some places recommend CL=9 for the current model~\cite{crucialramlist}.
+The term tRas is the active to precharge delay which is the time taken by the memory to allow next access to be initiated~\cite{hardwaresec}.
+The timing of RAM is given as 9-9-9-\textbf{X} (for CL 9) where \textbf{X} is the tRas. If not given, for CL 9 RAM 9-9-9, the tRas is 9*3 which is 27. The lower the tRas the better the RAM. Therefore \emph{we will consider CL 9 or 8 for new memory with tRas 27, 24 or lower}. 
+
+DDR4 (better version than DDR3) is not recommended by \macsales or \crucial for our model. It is also not necessarily found to be interchangeable with DDR3 --- the processor must support it, number of pins must match, etc~\cite{quoraddr, suddr}. As our model is also older \emph{we will not investigate further about DDR4 compatibility and only consider DDR3 for memory upgrade}.
+
+The current model supports RAM at 1.5V~\cite{wikimacpro,intelcoremoredet,ocprocessorguide}. The processor type for our model is also called Sandy Bridge~\cite{intelsandytypes}. It supports 1.5V RAM. For other later models of processors like Ivy Bridge~\cite{intelivytypes} the memory is 1.35V. Crucial suggests 1.35V~\cite{crucialramlist} where as \macsales suggests both 1.5V and 1.35V~\cite{macsalesramlist}. Macmemory website recommends 1.5V only for the processor~\cite{macmemramlist}. My \textbf{hypothesis} is that if the processor specifies 1.5V, it must imply that the processor will divert 1.5V to the RAM. If we use 1.35V, it means more volts is applied to RAM than it needs - may lead to heating, etc. So it may be better to use 1.5V RAM as even if lower volts is applied to a RAM that needs higher volts, it may not cause as much serious issue --- except that it may not work. Therefore \emph{we will prefer 1.5V rated RAM}.
+
+\crucial and \macsales have many recommendations, yet many of them are DDR3L model, the low voltage (1.35V) model for Ivy bridge processor. As these are trusted sites that offer lifetime limited warranty, it makes sense that these RAM may work in our model. Yet the best choice is 1.5V DDR3 model for Sandy bridge processor. There is one on \macsales that seems ideal~\cite{macsalesramin}. However we will visit \market to survey there first.
+
+It must be noted that the current 4GB RAM is worth 60 hkd if traded in to {\macsales}~\cite{owcmemrebate}. However given international shipping that is not included, the execution is nonviable. We may consider trading it in the local \market.
+
+
+\subsection{Memory Options to Consider}
+\label{memoryOptions}
+
+The tools required~\cite{ifixramreguide} are:
+
+\begin{itemize}
+\item Phillips \#00 Screwdriver~\cite{ifixphscd}
+\item Spudger~\cite{ifixspud} or Nylon Pry tool~\cite{owcramreguide,owcpry} (not necessary~\cite{macrumourpry} for execution of our goal)
+%\item TR6 Torx Security Screwdriver~\cite{ifixtorscd}
+\end{itemize}
+
+\macsales has all of them in one set for 118 hkd~\cite{owcalltools}.
+
+The RAM specifications are: ~\cite{macsalesramin,ifixitramdet}:
+
+\begin{itemize}
+\item Technology: DDR3 SO-DIMM
+\item Density: 8GB (8192MB)
+\item RoHS: Yes
+\item Pin Count: 204-pin
+\item Op. Temp.: 0C to +85C
+\item Data Rate: DDR3-1333
+\item Speed: PC3-10600
+\item CL: CAS 9-9-9-24
+\item Cycle Time: 1.875ns
+\item Voltage: 1.5V
+\item ECC: Non ECC
+\item Module Ranks: Dual Rank
+\item Register: Non Parity
+\item Low Noise 8-Layer PCB
+\item Price : 1000-1100 hkd~\cite{crucialramlist,macsalesramin,ifixitramdet}
+\end{itemize}
+
+Top brands for RAM based on preliminary survey are: \macsales, \crucial, Samsung, Kingston, Corsair.
+
+There are not many mentions of bad RAMs online. \emph {Apacer and other cheap brands are said to be bad at some places.} We must keep this in mind. However as long as we buy from the well known brands listed above, we must be fine. 
+
+\subsection{Basic Survey of Storage}
+
+In our model both the optical bay and main bay have link speed of 6 Gbits/s. The negotiated speed are lower because the devices have their own SATA models of lower speed~\cite{applestacksata,tomshardsata}.
+My hard disk (Toshiba MK5065GSX) currently located in the main bay is SATA II~\cite{amazonharddiskdet}. According to current HDD specs~\cite{toshibadet}, the main bay is 9.5 mm but it will support 7mm through the use of specs~\cite{suhdd79}.
+
+There are three hardware options for storage: SSD, SSHD and traditional hard drives~\cite{techadsshd,seagatesshd}. As our goal is to get high speed, SSD is the best option. SSHD (hybrid SSD) is a compromise such that for same money as SSD one gets more storage by compromising some speed. For the same money, traditional HD is slower and has more storage. As we intend to keep our traditional HD, storage space is not our main concern. \emph{ For the best speed, we will consider buying SSD}. 
+  
+The optical bay for our model is compatible with SATA III(6 Gbits/s link speed), yet there are some reports online that the optical bay for \model may not actually work properly with a SATA III device~\cite{owcopsatabad,owcopsatabad2,owcsataissues,macrumoursssdreplaceguide,appleforssdissue},everymacreplaceguide. Especially if the optical bay for our model has SATA III and the drive installed there is SATA III capable, the bay will negotiate a high ~6 Gbits/s speed but that leads to severe problems. So it is better if the bay is SATA II ~3Gbits/s or if the hardware installed there is 3Gbits/s. \emph{ For our model, SATA III device must be installed in main bay and SATA II device in the optical bay}. 
+
+Previously there were some problems in our model in the main bay with 6 Gbits/s drive. That has been resolved with software update. \emph{ For normal functioning of SATA III device in main bay for our model, the software must be updated to EFI Firmware Update 2.3~\cite{owcsataissues,appleefiupdate,appleefiupdate2}}.
+
+SATA III in the main bay and drive working at negotiated speed of 6 Gbits/s is superior to hard disk operation at negotiated speed of SATA II~\cite{tomshardsataperf}. So although in real-world scenarios where the computing is not intense, there may not be much difference between SATA II and SATA III, for SSDs the operation speed in SATA III is found higher in practice~\cite{tomshardsatadiff,tomshardsatadiff2}. \emph{ Therefore, we will consider SATA III device for our main bay storage}.
+
+Note that optical bay does not have motion sensors so the hard drive, when installed there, is not protected from bumps and drops. The hard drive in optical bay is also noisier~\cite{applesthdnoisy,applestsmsop}.Yet some hard drive have inbuilt protection~\cite{macrumoursssdreplaceguide}. 
+Toshiba website seems to have removed older products details~\cite{toshibaforum}. According to a lot of websites, MKxx65GSXF family of HDD (our model being Toshiba MK5065GSXF) from Toshiba has an embedded motion sensor to detect if the hard disk drive is in free fall. In such cases, the HDD quickly and immediately moves the read/write heads away from the spinning to prevent them damaging any data upon impact. 
+One website~\cite{toshibadet} seems to have the full details of the HDD model and specifies that it has reliable motion sensor.
+As multiple websites have reported the fact that our current HDD model has motion sensor~\cite{toshibamotion1,toshibamotion2,toshibamotion3,macrumourtoshiba,applestsmsop}, one of them~\cite{macrumourtoshiba} also claiming that it was on Toshiba website at the time of its reporting, we will believe it.
+For all other factors, HDD in optical bay seems fine~\cite{applesthdop}. 
+We also find that there are not many reports of HDD failure or severe issues when installed in optical bay; most reported issues are about SATA which we addressed~\cite{appledisisshdop,ifixitisshdop,ifixitisshdop2}. 
+There are some claims that we should disable sudden motion sensor in the OS as the HDD has its own~\cite{remielhddop}. Yet it is not very popular or logically compelling argument, so we will avoid it for now.
+The concerns about noise is not a big issue for now. The battery life can be improved by using HDD wisely.
+The most important concern is heating~\cite{applestsmsop}. Some claim its not that bad~\cite{applesthdop} and generally this issue is not widely reported online for now. Nonetheless, given its potential to fatally affect the logic board and cause complete damage which is very expensive to repair, we will take care and be sensitive to it.
+\emph{ Therefore, we conclude that installing our current Toshiba HDD into the optical bay (from the main bay) is safe}.
+
+
+\subsection{Options for Optical Bay Enclosures}
+\label{opticalBayEnclosure}
+We need to consider how we will use our superdrive externally after removing it from the optical bay.
+
+The \textbf{\macsales Data Doubler} with the superdrive enscloser will cost around 44 usd (345 hkd)~\cite{owcdoubsup}. It is a well known brand with great reviews, warranty etc. It also includes complete set of tools that are necessary for both memory and storage replacement~\cite{owcdoubtools}. After purchasing this we need nothing more than an SSD to execute the whole operation of putting SSD in main bay, HDD in optical bay, using Superdrive externally. \emph{The warranty for data doubler and superdrive enclosure is 1 year by \macsales}. 
+\emph{Total cost : 345 hkd.}
+
+The \textbf{MCE Optibay} for Unibody Macs together with the optical drive case will be around 49.99 usd (391 hkd)~\cite{mcetechoptibay, mcetechdriveen}. It also includes all the tools like \macsales. 
+The brand is well known and discussed online, but \macsales reputation, popularity and expertise is superior.
+\emph{The warranty for Optibay is lifetime and for the Superdrive enclosure is 1 year}.
+The difference from \macsales seems to be excess of 50 hkd in exchange for lifetime warranty on Optibay (against 1 year). 
+\emph{ Total cost : 391 hkd.}
+
+The \textbf{Unibody Laptop Dual Drive} by ifixit comes at 34.95 usd (274 hkd)~\cite{ifixitdualdr}. This includes tools and also the cable for superdrive connection and probably a bag-enclosure. The price is cheaper than other well known brands. \emph{It has lifetime warranty on all items}. It is around 70 hkd cheaper than \macsales and has lifetime warranty against 1 year for \macsales. The downside may be that the superdrive enclosure is not as good or specified (though it has cables) and that the brand is not as popular, etc as \macsales.
+\emph{ Total cost : 274 hkd.}
+
+\textbf{Generic Bays} available online are reported as good and much cheaper~\cite{amaznbay,macrumoursbaydiss,cnetbaydiss,applestbaydiss}. There are also cautions that there may be annoying but non-severe issues. 
+
+Note that this is just a tool and not the actual device. Yet its malfunction can be irritating. Based on the above analysis we will visit \market and purchase a good generic alternative or else the ones from ifixit or \macsales. \emph{ The cost-benefit analysis must be done on the spot to see if the total price of tools, bay etc when bought separately is really much cheaper}.
+
+\subsection{Storage Options to Consider}
+\label{storageOptions}
+The tools required~\cite{ifixhdreguide} are:
+
+\begin{itemize}
+\item Phillips \#00 Screwdriver~\cite{ifixphscd}
+\item Spudger~\cite{ifixspud} or Nylon Pry tool~\cite{owcramreguide,owcpry} (not necessary~\cite{macrumourpry} for execution of our goal)
+\item TR6 Torx Security Screwdriver~\cite{ifixtorscd}
+\end{itemize}
+
+\macsales has all of them in one set for 118 hkd~\cite{owcalltools}.
+
+For \macsales the price of bundled SSD with DIY Data Doubler offers no substantial discount~\cite{owcddssdbun1,owcddssdbun2}. Further the super drive needs to be bought together again so as to get discount on it.\emph{Therefore we will consider buying SSDs and Data Doubler with Superdrive separately, if at all}.
+
+Below we discuss several SDD products and their important features.
+
+\textbf{\macsales Mercury Electra 6G SSD}
+
+\begin{itemize}
+\item 119.99 usd (938 hkd)
+\item 250 GB 
+\item 3 year warranty
+\item 4ch controller
+\item Sequential Reads (Compressible Data)up to 522MB/s
+\item Sequential Writes (Compressible Data)up to 463MB/s
+\item Sequential Reads (Incompressible Data)up to 506MB/s
+\item Sequential Writes (Incompressible Data)up to 443MB/s
+\item Random 4K Readup to 90,000 IOPS
+\item Random 4K Writeup to 60,000 IOPS
+\textsuperscript{*} IOPS means Input Output operations per Minute 
+\end{itemize}
+
+
+\textbf{\macsales Mercury Extreme Pro 6G SSD}
+
+\begin{itemize}
+\item 149.99 usd (1172 hkd)
+\item 240 GB 
+\item 5 year warranty
+\item controller: SandForce 228x Series Processor with 7\% Over Provisioning
+\item Sustained Reads 6Gb/s (up to)559MB/s
+\item Sustained Writes 6Gb/s (up to)527MB/s
+\item Sustained Reads 3Gb/s (up to)284MB/s
+\item Sustained Writes 3Gb/s (up to)266MB/s
+\item Read Incompressible Data Rate (up to)479MB/s
+\item Write Incompressible Data Rate (up to)282MB/s
+\item Random 4K Read4Up to 60,000 IOPS
+\item Random 4K Write4Up to 60,000 IOPS
+\item Read Latencyless than 0.1ms
+\item Write Latencyless than 0.1ms
+\end{itemize}
+
+Note that \macsales Mercury Extreme is said to be better performing and more reliable than Electra. The controller is different which accounts for the difference. However for our purpose Electra may be enough. There is not much online discussions about problems with Electra or how Extreme is way better. There is reasonable cost difference between the two.
+
+\textbf{Samsung 850 PRO 6G}
+
+\begin{itemize}
+\item 129 usd (1008 hkd)
+\item 256 GB 
+\item 10 year warranty
+\item Max Sequential Reads (Compressible Data)up to 550MB/s
+\item Max Sequential Writes (Compressible Data)up to 520MB/s
+\end{itemize}
+
+\textbf{Samsung 850 EVO 6G}
+
+\begin{itemize}
+\item 99.99 usd (781 hkd)
+\item 250 GB 
+\item 5 year warranty
+\item Max Sequential Reads (Compressible Data)up to 540MB/s
+\item Max Sequential Writes (Compressible Data)up to 520MB/s
+\end{itemize}
+
+\textbf{Intel 520 SSD 6G}
+
+\begin{itemize}
+\item 154 usd (1203 hkd)
+\item 240 GB 
+\item 5 year warranty
+\item Reads (Compressible Data)up to 550MB/s
+\item Writes (Compressible Data)up to 520MB/s
+\end{itemize}
+
+\textbf{Corsair CSSD-N240GBGTX-BK 6G}
+
+\begin{itemize}
+\item 269 usd (2102 hkd)
+\item 240 GB 
+\end{itemize}
+
+\textbf{Samsung 850 Pro Series 6G}
+
+\begin{itemize}
+\item 167.99 usd (1313 hkd)
+\item 256 GB 
+\item 10 year warranty
+\item Sequential Reads up to 550MB/s
+\item Sequential Writes up to 520MB/s
+\item Random 4K Readup to 100,000 IOPS
+\item Random 4K Writeup to 90,000 IOPS
+\end{itemize}
+
+\textbf{Crucial BX300 6G}
+
+\begin{itemize}
+\item 87.99 usd (688 hkd)
+\item 240 GB 
+\item 3 year warranty
+\item Sequential Reads up to 550MB/s
+\item Sequential Writes up to 510MB/s
+\end{itemize}
+
+\textbf{Crucial mX300 6G}
+
+\begin{itemize}
+\item 92.99 usd (727 hkd)
+\item 275 GB 
+\item 3 year warranty
+\item Sequential Reads up to 530MB/s
+\item Sequential Writes up to 500MB/s
+\end{itemize}
+
+\textbf{Crucial mX300 6G}
+
+\begin{itemize}
+\item 149.99 usd (1172 hkd)
+\item 525 GB 
+\item 3 year warranty
+\item Sequential Reads up to 530MB/s
+\item Sequential Writes up to 510MB/s
+\end{itemize}
+
+\textbf{ifixit(Toshiba) OCZ TL100 SSD 6G}
+
+\begin{itemize}
+\item 79.95 usd (625 hkd)
+\item 240 GB 
+\item 2 year warranty
+\item Sequential Reads up to 550MB/s
+\item Sequential Writes up to 530MB/s
+\end{itemize}
+
+\textbf{ifixit(Toshiba ) OCZ TR150 SSD 6G}
+
+\begin{itemize}
+\item 149.95 usd (1172 hkd)
+\item 480 GB 
+\item 2 year warranty
+\item Sequential Reads up to 550MB/s
+\item Sequential Writes up to 520MB/s
+\end{itemize}
+
+According to some online ratings sites~\cite{codhorratings, tomshardratings} that tested the drives the bests brands are (in similar but not exact order):
+
+\begin{itemize}
+\item \textbf{Samsung 830(470) 256GB}
+\item \textbf{OCZ Vertex(3, 4, Agility 2, etc.) 240 GB}
+\item \textbf{Intel SSD 520(330, X25-M G2, X25-V) 240 GB}
+\item \textbf{Corsair Performance Pro(Nova , Force F100)}
+\item \textbf{Crucial M4(C300) 256 GB }
+\item \textbf{Kingston SSDNow V+}
+\end{itemize}
+
+\subsection{Keyboard, Mouse and VGA Adapter}
+\label{keyboardMiceVga}
+We also need to purchase a Keyboard, Mouse and VGA adapter for our \model. As the Apple original ones are very expensive ($\geq$ 500 hkd for Keyboard and Mice, $\geq$ 200 hkd for VGA adapter)~\cite{applekeymi,appleadapter}, we will look for reasonable ones in \market.  

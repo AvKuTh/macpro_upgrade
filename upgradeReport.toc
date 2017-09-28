@@ -1,0 +1,33 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {I}Introduction}{2}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {II}Survey}{2}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Basic Survey of Memory}{2}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}Memory Options to Consider}{3}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Basic Survey of Storage}{4}{subsection.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-D}}Options for Optical Bay Enclosures}{5}{subsection.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-E}}Storage Options to Consider}{5}{subsection.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-F}}Keyboard, Mouse and VGA Adapter}{6}{subsection.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {III}Methodology, Maintenance and Future Considerations}{6}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Methodology for Memory}{6}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Methodology for Storage}{7}{subsection.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Post Installation verification}{7}{subsection.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Care-taking in Future}{7}{subsection.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-E}}Further Replacements for Consideration}{7}{subsection.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {IV}Conclusion}{7}{section.4}
